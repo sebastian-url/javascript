@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar números pares</title>
+</head>
+<body>
+    <h2>Contar números pares entre 1 y 50</h2>
+    <button onclick="contarPares()">Contar Pares</button>
+    <p id="resultado"></p>
+
+    <script>
+        function contarPares() {
+            let count = 0;
+            let i = 1;
+            while (i <= 50) {
+                if (i % 2 === 0) {
+                    count++;
+                }
+                i++;
+            }
+            document.getElementById("resultado").innerText = "Cantidad de números pares entre 1 y 50: " + count;
+        }
+    </script>
+</body>
+</html>

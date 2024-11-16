@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Precio por Producto</title>
+</head>
+<body>
+    <h2>Selecciona un tipo de producto</h2>
+
+    <!-- Campo de selección para el producto -->
+    <label for="producto">Tipo de producto:</label>
+    <select id="producto">
+        <option value="ropa">Ropa</option>
+        <option value="electrónica">Electrónica</option>
+        <option value="alimentos">Alimentos</option>
+    </select>
+    
+    <button onclick="mostrarPrecio()">Mostrar Precio</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarPrecio() {
+            const producto = document.getElementById("producto").value;
+            let precio = 0;
+
+            switch (producto) {
+                case "ropa":
+                    precio = 25;
+                    break;
+                case "electrónica":
+                    precio = 150;
+                    break;
+                case "alimentos":
+                    precio = 10;
+                    break;
+                default:
+                    precio = 0;
+                    break;
+            }
+
+            document.getElementById("resultado").innerText = `El precio del producto seleccionado es: $${precio}`;
+        }
+    </script>
+</body>
+</html>

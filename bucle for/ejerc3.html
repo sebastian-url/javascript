@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Multiplicar</title>
+</head>
+<body>
+    <h2>Generar Tabla de Multiplicar</h2>
+    <label for="numero">Número:</label>
+    <input type="number" id="numero" name="numero">
+    <button onclick="generarTabla()">Generar Tabla</button>
+    <p id="resultado"></p>
+
+    <script>
+        function generarTabla() {
+            let numero = parseInt(document.getElementById("numero").value);
+            let resultado = "";
+            for (let i = 1; i <= 10; i++) {
+                resultado += numero + " x " + i + " = " + (numero * i) + "<br>";
+            }
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Nivel de Acceso</title>
+</head>
+<body>
+    <h2>Ingresa tu rol para verificar el acceso</h2>
+
+
+    <label for="rol">Tu rol (administrador, editor, visitante):</label>
+    <input type="text" id="rol" name="rol">
+    
+    <button onclick="verificarAcceso()">Verificar Acceso</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarAcceso() {
+            const rol = document.getElementById("rol").value.toLowerCase();
+            let resultado = "";
+
+            switch (rol) {
+                case "administrador":
+                    resultado = "Acceso completo: Puedes gestionar todo el sistema.";
+                    break;
+                case "editor":
+                    resultado = "Acceso limitado: Puedes editar contenido.";
+                    break;
+                case "visitante":
+                    resultado = "Acceso restringido: Solo puedes ver contenido.";
+                    break;
+                default:
+                    resultado = "Rol no válido. Por favor, ingresa un rol válido (administrador, editor, visitante).";
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>

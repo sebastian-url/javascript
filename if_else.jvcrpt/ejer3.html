@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificación por Edad</title>
+</head>
+<body>
+    <h2>Clasificación según la edad</h2>
+
+    <label for="edad">Introduce tu edad:</label>
+    <input type="number" id="edad" name="edad">
+    
+
+    <button onclick="clasificarEdad()">Clasificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function clasificarEdad() {
+            const edad = parseInt(document.getElementById("edad").value);
+
+            let resultado = "";
+
+            if (edad >= 0 && edad <= 12) {
+                resultado = "Eres un niño.";
+            } else if (edad >= 13 && edad <= 17) {
+                resultado = "Eres un adolescente.";
+            } else if (edad >= 18 && edad <= 64) {
+                resultado = "Eres un adulto.";
+            } else if (edad >= 65) {
+                resultado = "Eres una persona mayor.";
+            } else {
+                resultado = "Edad no válida. Por favor, introduce una edad válida.";
+            }
+
+            // Mostrar el resultado en la página
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>

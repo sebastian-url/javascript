@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificar Día de la Semana</title>
+</head>
+<body>
+    <h2>Ingresa un número (1-7) para saber qué día es</h2>
+
+
+    <label for="numero">Número del día:</label>
+    <input type="number" id="numero" name="numero" min="1" max="7">
+    
+    <button onclick="clasificarDia()">Clasificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function clasificarDia() {
+            const numero = parseInt(document.getElementById("numero").value);
+            let resultado = "";
+
+            switch (numero) {
+                case 1:
+                    resultado = "Lunes";
+                    break;
+                case 2:
+                    resultado = "Martes";
+                    break;
+                case 3:
+                    resultado = "Miércoles";
+                    break;
+                case 4:
+                    resultado = "Jueves";
+                    break;
+                case 5:
+                    resultado = "Viernes";
+                    break;
+                case 6:
+                    resultado = "Sábado";
+                    break;
+                case 7:
+                    resultado = "Domingo";
+                    break;
+                default:
+                    resultado = "Por favor, ingresa un número entre 1 y 7.";
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>

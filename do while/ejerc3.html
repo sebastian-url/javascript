@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir un número positivo</title>
+</head>
+<body>
+    <h2>Ingresa un número positivo</h2>
+    <button onclick="pedirNumero()">Solicitar Número</button>
+    <p id="resultado"></p>
+
+    <script>
+        function pedirNumero() {
+            let numero;
+            do {
+                numero = parseInt(prompt("Por favor, ingresa un número positivo:"));
+            } while (numero < 0);
+            document.getElementById("resultado").innerText = "Has ingresado el número positivo: " + numero;
+        }
+    </script>
+</body>
+</html>
